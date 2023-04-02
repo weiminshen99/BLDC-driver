@@ -19,6 +19,8 @@ all: prepare build/main.elf
 	avr-objdump -h -S build/main.elf > build/main.lst
 	avr-size build/main.elf
 
+clean:
+	rm -rf build/
 prepare:
 	mkdir -p build/
 
