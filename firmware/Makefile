@@ -24,6 +24,12 @@ clean:
 prepare:
 	mkdir -p build/
 
+read:
+	avrdude -p atmega8 -P usb -c USBasp -U flash:r:flash.bin:r
+
+flash:
+	avrdude -p m8 -P usb -c USBasp -U flash:w:build/main.hex
+
 build/main.o: main.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
