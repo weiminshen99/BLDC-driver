@@ -1,7 +1,6 @@
 extern volatile uint16_t ticks;
 
-#define LED PORTD,5
-
+#define LED PORTD,3
 #define UART_TX PORTD,1
 
 #define NO_OF_POLES 4
@@ -9,24 +8,23 @@ extern volatile uint16_t ticks;
 #define SDA PORTC,4
 #define SCL PORTC,5
 
-#define P_UP_PIN_BV _BV(3)	// A_top, HS_A
-#define P_UP PORTD,3
-#define P_VP_PIN_BV _BV(4)	// B_top, HS_B
-#define P_VP PORTD,4
-#define P_WP_PIN_BV _BV(5)	// C_top, HS_C
-#define P_WP PORTD,5
+#define P_UP_PIN_BV _BV(4)
+#define P_UN_PIN_BV _BV(3)
+#define P_VP_PIN_BV _BV(0)
+#define P_VN_PIN_BV _BV(2)
+#define P_WP_PIN_BV _BV(7)
+#define P_WN_PIN_BV _BV(1)
 
-#define P_UN_PIN_BV _BV(0)	// A_bot, LS_A
-#define P_UN PORTB,0
-#define P_VN_PIN_BV _BV(1)	// B_bot, LS_B
-#define P_VN PORTB,1 // OC1A
-#define P_WN_PIN_BV _BV(2)	// C_bot, LS_C
-#define P_WN PORTB,2 // OC1B
+#define P_UP PORTB,4
+#define P_UN PORTB,3 // OC2
+#define P_VP PORTB,0
+#define P_VN PORTB,2 // OC1B
+#define P_WP PORTB,7
+#define P_WN PORTB,1 // OB1A
 
-#define PHASE_U_IN PORTD,7	// SENSE_A
-#define PHASE_V_IN PORTC,4	// SENSE_B
-#define PHASE_W_IN PORTC,5	// SENSE_C
-				// SENSE_X is not used
+#define PHASE_U_IN PORTC,4
+#define PHASE_V_IN PORTC,3
+#define PHASE_W_IN PORTC,2
 
 #define ID0 PORTD,0
 #define ID1 PORTD,1
